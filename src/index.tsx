@@ -10,17 +10,17 @@ if (rootEl) {
   const root = ReactDOM.createRoot(rootEl);
   root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <SWRConfig
-          value={{
-            revalidateIfStale: false,
-            revalidateOnFocus: false,
-            revalidateOnReconnect: false,
-          }}
-        >
+      <SWRConfig
+        value={{
+          revalidateIfStale: false,
+          revalidateOnFocus: false,
+          revalidateOnReconnect: false,
+        }}
+      >
+        <BrowserRouter>
           <App />
-        </SWRConfig>
-      </BrowserRouter>
+        </BrowserRouter>
+      </SWRConfig>
     </React.StrictMode>
   );
 }

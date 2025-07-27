@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 export const useEvents = () => {
   const { data, error, isLoading } = useSWR(
-    "https://dev.marche.it/?rest_route=/wp/v2/posts",
+    "https://worker-dev.ilpert.workers.dev/posts",
     fetcher
   );
 
@@ -19,7 +19,7 @@ export const useEvents = () => {
 
 export const useEventMedia = () => {
     const { data } = useSWR(
-        "https://dev.marche.it/wp-json/wp/v2/media",
+        "https://worker-dev.ilpert.workers.dev/media",
         fetcher
       );
 

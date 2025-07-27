@@ -95,6 +95,37 @@ export default function EventDetailPage() {
     );
   }
 
+  function removeVideoSectionSimple(htmlContent: string) {
+    const sectionsToRemove = [
+      '<h2 class="wp-block-heading">VIDEO</h2>',
+      '<h1 class="wp-block-heading">Video</h1>',
+      '<h2 class="wp-block-heading">MEDIA</h2>',
+      '<h2 class="wp-block-heading">DOWNLOAD</h2>',
+      '<h2 class="wp-block-heading">VIDEO E SLIDE</h2>',
+      '<h3 class="wp-block-heading">▶️ <strong>VIDEO</strong></h3>',
+      '<h2 class="wp-block-heading">▶️ VIDEO</h2>'
+      
+    ];
+  
+    let earliestIndex = -1;
+    
+    // Find the earliest occurrence of any section to remove
+    for (const section of sectionsToRemove) {
+      const index = htmlContent.indexOf(section);
+      if (index !== -1 && (earliestIndex === -1 || index < earliestIndex)) {
+        earliestIndex = index;
+      }
+    }
+    
+    if (earliestIndex !== -1) {
+      return htmlContent.substring(0, earliestIndex);
+    }
+    
+    return htmlContent;
+  }
+  const cleanContent = removeVideoSectionSimple(event.content.rendered);
+
+  console.log({event, cleanContent})
   return (
     <>
       {/* Breadcrumbs */}
@@ -151,13 +182,26 @@ export default function EventDetailPage() {
             {/* <div className="absolute inset-0 bg-black/20" /> */}
             {event.featured_media && mediaMap[event.featured_media] ? (
               <img
+              loading="lazy"
                 src={mediaMap[event.featured_media]}
                 alt={event.title.rendered}
                 className="object-contain"
                 // className=" bg-black/20 h-full w-full object-cover"
               />
             ) : (
-              <div className="absolute inset-0 bg-black/20" />
+              <>
+              <img loading="lazy" src="https://picsum.photos/1920/1800" className="object-contain" alt="placeholder" />
+              <div className="absolute bottom-6 left-6 right-6">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-semibold text-gray-800 mb-1">
+                  Evento DevMarche
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {formatFullDate(event.date)}
+                </p>
+              </div>
+            </div> 
+              </>
             )}
 
             {/* <div className="absolute bottom-6 left-6 right-6">
@@ -188,7 +232,7 @@ export default function EventDetailPage() {
               <CardContent>
                 <div
                   className="prose prose-lg max-w-none prose-headings:text-gray-800 prose-p:text-gray-600 prose-a:text-blue-600 prose-strong:text-gray-800"
-                  dangerouslySetInnerHTML={{ __html: event.content.rendered }}
+                  dangerouslySetInnerHTML={{ __html: cleanContent }}
                 />
               </CardContent>
             </Card>
@@ -221,10 +265,12 @@ export default function EventDetailPage() {
                 </div>
 
                 <div className="pt-4 border-t">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                 <a href={event.link} target="_blank">
+                 <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Link Evento Originale
                   </Button>
+                 </a>
                 </div>
               </CardContent>
             </Card>
@@ -242,7 +288,8 @@ export default function EventDetailPage() {
                       Video e slide di questo evento potrebbero essere
                       disponibili su Vimeo.
                     </p>
-                    <Button
+                   <a href="https://vimeo.com/devmarche" target="_blank">
+                   <Button
                       variant="outline"
                       size="sm"
                       className="border-amber-300 text-amber-700 hover:bg-amber-100"
@@ -250,6 +297,7 @@ export default function EventDetailPage() {
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Visualizza su Vimeo
                     </Button>
+                   </a>
                   </div>
                 </div>
               </CardContent>

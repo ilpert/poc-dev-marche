@@ -40,10 +40,12 @@ export default function HomePage() {
             per sviluppatori e tech enthusiast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <NavLink to="https://github.com/DevMarche/eventi" target="_blank">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 text-lg">
               <Github className="w-5 h-5 mr-2" />
               Proponi un Talk
             </Button>
+            </NavLink>
             <Button variant="outline" size="lg" className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
               <Users className="w-5 h-5 mr-2" />
               Unisciti alla Community
@@ -90,8 +92,8 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <a href="https://t.me/+j-h3ljrMZV8zZmVk" className="group">
-                    <Card className="border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+                  <a href="https://t.me/+j-h3ljrMZV8zZmVk" target="_blank" className="group">
+                    <Card className="h-full border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
                       <CardContent className="p-6 text-center">
                         <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
                           <MessageSquare className="w-8 h-8 text-white" />
@@ -102,8 +104,8 @@ export default function HomePage() {
                     </Card>
                   </a>
 
-                  <a href="https://www.linkedin.com/company/devmarche/" className="group">
-                    <Card className="border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+                  <a href="https://www.linkedin.com/company/devmarche/" target="_blank" className="group">
+                    <Card className="h-full border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
                       <CardContent className="p-6 text-center">
                         <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
                           <div className="w-8 h-8 bg-white rounded text-blue-600 flex items-center justify-center font-bold text-sm">in</div>
@@ -114,8 +116,8 @@ export default function HomePage() {
                     </Card>
                   </a>
 
-                  <a href="https://www.facebook.com/groups/developermarche" className="group">
-                    <Card className="border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+                  <a href="https://www.facebook.com/groups/developermarche" target="_blank" className="group ">
+                    <Card className="h-full border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
                       <CardContent className="p-6 text-center">
                         <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
                           <span className="text-white font-bold text-xl">f</span>
@@ -139,11 +141,13 @@ export default function HomePage() {
                 <p className="text-sm mb-6 text-purple-200">
                   ... sì, lo sappiamo, è piuttosto nerd come strumento per gestire una Call for Sessions 😉
                 </p>
+                <NavLink to="https://github.com/DevMarche/eventi" target="_blank">
                 <Button variant="secondary" size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
                   <Github className="w-5 h-5 mr-2" />
                   Apri una Issue
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </NavLink>
               </CardContent>
             </Card>
 
@@ -224,7 +228,7 @@ export default function HomePage() {
                 </Card>
 
                 <Card className="border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50">
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 h-full flex flex-col justify-between">
                     <h3 className="text-xl font-semibold mb-3 text-gray-800 flex items-center">
                       <Heart className="w-5 h-5 mr-2 text-pink-600" />
                       Sei un privato?

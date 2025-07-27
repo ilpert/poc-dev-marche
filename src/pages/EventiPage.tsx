@@ -95,14 +95,16 @@ export default function EventiPage() {
                   Video e slide di alcuni vecchi eventi sono attualmente
                   disponibili solo su Vimeo.
                 </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-amber-300 text-amber-700 hover:bg-amber-100"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Vai su Vimeo
-                </Button>
+                <a href="https://vimeo.com/devmarche" target="_blank">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-amber-300 text-amber-700 hover:bg-amber-100"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Vai su Vimeo
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -137,12 +139,17 @@ export default function EventiPage() {
                       {event.featured_media &&
                       mediaMap[event.featured_media] ? (
                         <img
+                          loading="lazy"
                           src={mediaMap[event.featured_media]}
                           alt={event.title.rendered}
                           className="h-48 w-full object-cover"
                         />
                       ) : (
-                        <div className="h-48 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600" />
+                        <img
+                          loading="lazy"
+                          src="https://picsum.photos/1920/1800"
+                          className="object-contain"
+                        />
                       )}
                       <div className="absolute bottom-4 left-4 right-4">
                         <Badge className="bg-white/90 text-gray-800 backdrop-blur-sm">
