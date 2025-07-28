@@ -55,16 +55,7 @@ export default function EventiPage() {
 
   return (
     <>
-      {/* Header */}
       <section className="mx-auto">
-        {/* <NavLink
-          to="/"
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Torna alla home
-        </NavLink> */}
-
         <div className="text-center mb-12">
           <Badge className="mb-6 bg-blue-100 text-blue-700 border-blue-200">
             <CalendarDays className="w-4 h-4 mr-1" />
@@ -135,20 +126,21 @@ export default function EventiPage() {
                 <NavLink to={`/eventi/${event.slug}`}>
                   <div className="relative">
                     {/* Featured Image Placeholder */}
-                    <div className="h-48 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 relative overflow-hidden">
+                    <div className="aspect-video bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 relative overflow-hidden rounded-t-lg">
                       {event.featured_media &&
                       mediaMap[event.featured_media] ? (
                         <img
                           loading="lazy"
                           src={mediaMap[event.featured_media]}
                           alt={event.title.rendered}
-                          className="h-48 w-full object-cover"
+                          className="w-full h-full object-fill"
                         />
                       ) : (
                         <img
                           loading="lazy"
                           src="https://picsum.photos/1920/1800"
-                          className="object-contain"
+                          alt="Event placeholder"
+                          className="w-full h-full object-fill"
                         />
                       )}
                       <div className="absolute bottom-4 left-4 right-4">
