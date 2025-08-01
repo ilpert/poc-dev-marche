@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevMarche – Restyle POC ✨
 
-## Getting Started
+Questa è una **proof of concept** per un restyle del sito [dev.marche.it](https://dev.marche.it), creata per offrire una **nuova esperienza visiva** e una migliore fruizione dei contenuti della community DevMarche.
 
-First, run the development server:
+La POC è stata realizzata utilizzando **[Rsbuild](https://rsbuild.rs/)** come bundler, **React** per la UI e **TailwindCSS** per lo styling.
+
+Il design è pensato per essere **chiaro, accessibile e moderno**, mantenendo la semplicità di navigazione, valorizzando gli eventi passati e futuri, e invogliando nuovi sviluppatori a partecipare.
+
+🔗 Demo online: [https://poc-dev-marche.pages.dev](https://poc-dev-marche.pages.dev)
+
+---
+
+## 📌 Contenuti della POC
+
+Questa proposta include il restyle completo di:
+
+- **Homepage**: breve introduzione alla community DevMarche e accesso rapido alle sezioni principali.
+- **Eventi Passati**: pagina elenco con tutti gli eventi organizzati, in un layout responsive e leggibile.
+- **Dettaglio Evento**: pagina dedicata a ciascun evento, con titolo, descrizione, relatori, data, e link a risorse.
+
+---
+
+## 🛠️ Setup
+
+Install the dependencies:
+
+Install the dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Get Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the dev server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+```
 
-## Learn More
+Build the app for production:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Preview the production build locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm preview
+```
